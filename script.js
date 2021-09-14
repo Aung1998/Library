@@ -1,4 +1,8 @@
+// DOM assets
+const books_div = document.getElementById('books')
+
 let myLibrary = []
+
 
 class Book {
    constructor(title, author, pages, have_read) {
