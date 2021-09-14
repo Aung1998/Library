@@ -1,0 +1,19 @@
+.header{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+}
+
+.book{
+    width: 250px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 25%;
+}
+
+.book{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
