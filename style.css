@@ -9,6 +9,7 @@
     height: 300px;
     border: 1px solid black;
     border-radius: 25%;
+    margin: 8px;
 }
 
 .book{
@@ -16,4 +17,11 @@
     flex-direction: column;
     justify-content:space-around;
     align-items: center;
+}
+
+.books{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    flex-direction: column;
+    justify-content:space-around;
 }
