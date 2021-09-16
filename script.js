@@ -21,15 +21,11 @@ function addToLibrary(title, author, pages, have_read) {
    if (!checkLibrary(title, author)) {
       let book = new Book(title, author, pages, have_read)
       myLibrary.push(book)
-      addToDOM()
+      updatePage()
    }
    else {
       alert("The book already exist!")
    }
-}
-
-function removeFromLibrary(title) {
-   myLibrary = myLibrary.filter(book => book.title != title)
 }
 
 function createBookDiv(name) {
@@ -46,9 +42,6 @@ function removeAllChildNodes(parent) {
 
 function createBook(book){
    const book_div = document.createElement('div')
-   const remove_btn = document.createElement('input')
-   remove_btn.type = 'button'
-   remove_btn.value = "Remove"
    book_div.classList.add('book')
    book_div.appendChild(createBookDiv(book.title))
    book_div.appendChild(createBookDiv(book.author))
@@ -59,19 +52,35 @@ function createBook(book){
    else{
       book_div.appendChild(createBookDiv("Has not read"))
    }
-   book_div.appendChild(remove_btn)
    return book_div
 }
 
-function addToDOM() {
+function updatePage() {
    // to update DOM library
    removeAllChildNodes(books)
    myLibrary.forEach(book => {
+      const remove_btn = document.createElement('input')
+      remove_btn.type = 'button'
+      remove_btn.value = "Remove"
+      remove_btn.classList.add('btnremove')
+      addRemoveEvent(remove_btn, book.title, book.author)
       book_div = createBook(book)
+      book_div.appendChild(remove_btn)
       books_div.appendChild(book_div)
    })
 }
 
+function addRemoveEvent(btn, t, a){
+   btn.addEventListener("click", () => {
+      myLibrary.forEach(book => {
+         if(book.title == t && book.author == a){
+            myLibrary.pop(myLibrary.indexOf(book))
+         }
+      })
+      console.log(myLibrary)
+      updatePage()
+   })
+}
 
 
 
