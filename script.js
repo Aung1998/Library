@@ -1,8 +1,23 @@
 // DOM assets
-const books_div = document.getElementById('books')
+const books_div = document.querySelector('.books')
+
+const open_form = document.querySelector('.openform')
+open_form.addEventListener('click', displayPopUp)
+
+const cancel_btn = document.querySelector('.cancelbtn')
+cancel_btn.addEventListener('click', closePopUp)
+
+const add_btn = document.querySelector('.addbtn')
+add_btn.addEventListener('click', () => {
+   let title = document.querySelector('.bookname').value
+   let author = document.querySelector('.authorname').value
+   let page = document.querySelector('.page').value
+   let have_read = document.querySelector('.check').checked
+   addToLibrary(title, author, page, have_read)
+   closePopUp()
+})
 
 let myLibrary = []
-
 
 class Book {
    constructor(title, author, pages, have_read) {
@@ -11,6 +26,19 @@ class Book {
       this.pages = pages
       this.have_read = have_read
    }
+}
+
+function displayPopUp(){
+   const openform = document.querySelector('.formPopup')
+   openform.style.display = "block"
+}
+
+function closePopUp(){
+   const openform = document.querySelector('.formPopup')
+   openform.style.display = "none"
+   document.querySelector('.bookname').value = ''
+   document.querySelector('.authorname').value = ''
+   document.querySelector('.page').value = ''
 }
 
 function checkLibrary(title, author) {
@@ -57,12 +85,12 @@ function createBook(book){
 
 function updatePage() {
    // to update DOM library
-   removeAllChildNodes(books)
+   removeAllChildNodes(books_div)
    myLibrary.forEach(book => {
       const remove_btn = document.createElement('input')
       remove_btn.type = 'button'
       remove_btn.value = "Remove"
-      remove_btn.classList.add('btnremove')
+      remove_btn.classList.add('btnremove', 'btn')
       addRemoveEvent(remove_btn, book.title, book.author)
       book_div = createBook(book)
       book_div.appendChild(remove_btn)

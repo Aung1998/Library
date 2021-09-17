@@ -2,6 +2,7 @@
     display:flex;
     flex-direction:column;
     align-items: center;
+    margin: 8px;
 }
 
 .book{
@@ -27,26 +28,76 @@
 }
 
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 5px 0 20px 0;
+}
 
-  .addform {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
-  }
+.addBook {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  display:flex;
+  align-items: center;
+}
+
+.formPopup {
+  display: none;
+  position: relative;
+  border: 3px solid #999999;
+  z-index: 9;
+}
+
+.formContainer {
+  max-width: 300px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.formContainer input[type=text],
+.formContainer input[type=number] {
+  padding: 15px;
+  margin: 5px 0 20px 0;
+  border: none;
+  background: #eee;
+}
+
+.formContainer input[type=text]:focus,
+.formContainer input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.formContainer .btn {
+  padding: 12px 20px;
+  border: none;
+  background-color: #8ebf42;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+
+.formContainer .cancelbtn {
+  background-color: #cc0000;
+}
+
+.formContainer .btn:hover,
+.openButton:hover {
+  opacity: 1;
+}
   
   /* Hide default HTML checkbox */
   .switch input {
     opacity: 0;
     width: 0;
     height: 0;
+    margin: 8px;
   }
   
   /* The slider */

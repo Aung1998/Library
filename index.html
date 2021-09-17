@@ -7,25 +7,42 @@
 <body>
     <div class="header">
         <div><h1>My Library</h1></div>
-        <div class="bookbtn"><input type="button" value="Add Book" /></div>
+        <div class="bookbtn"><input type="button" value="Add Book" class="openform"/></div>
     </div>
-    <div class="addform">
-        <form id="bookform">
-            <h3>Book Name</h3>
-            <input type="text" id="bookname" value=""/>
-            <h3>Author Name</h3>
-            <input type="text" id="bookname" value=""/>
-            <h3>Page Number</h3>
-            <input type="text" id="bookname" value=""/>
-            <h3>Have you read it?</h3>
+
+    <div class="addBook">
+        <div class="formPopup">
+          <form class="formContainer">
+            <h2>Please Add the book here</h2>
+            <label for="title">
+              <h3>Title</h3>
+            </label>
+            <input type="text" class="bookname" value="" required/>
+            <label for="author">
+              <h3>Author</h3>
+            </label>
+            <input type="text" class="authorname" value="" required/>
+            <label for="pages">
+                <h3>Pages</h3>
+            </label>
+            <input type="number" class="page" value="" required/>
+            <label for="finishread">
+                <h3>Have you read it?</h3>
+            </label>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" class="check" checked="true">
                 <span class="slider round" id="read"></span>
             </label>
-        </form>
+            <div>
+                <input type="button" value="Add Book" class="btn addbtn">
+                <input type="button" value="Cancel" class="btn cancelbtn">
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
     <main class='container'>
-        <div class="books" id="books">
+        <div class="books">
         </div>
     </main>
     <script src="script.js"></script>
