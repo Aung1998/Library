@@ -6,10 +6,9 @@
 </head>
 <body>
     <div class="header">
-        <div><h1>My Library</h1></div>
-        <div class="bookbtn"><input type="button" value="Add Book" class="openform"/></div>
+        <div><h1 class="head">My Library</h1></div>
+        <div class="openform"><input type="button" value="Add Book" class="btn bookbtn"/></div>
     </div>
-
     <div class="addBook">
         <div class="formPopup">
           <form class="formContainer">
@@ -17,15 +16,15 @@
             <label for="title">
               <h3>Title</h3>
             </label>
-            <input type="text" class="bookname" value="" required/>
+            <input type="text" class="bookname" value="" required="true"/>
             <label for="author">
               <h3>Author</h3>
             </label>
-            <input type="text" class="authorname" value="" required/>
+            <input type="text" class="authorname" value="" required="true"/>
             <label for="pages">
                 <h3>Pages</h3>
             </label>
-            <input type="number" class="page" value="" required/>
+            <input type="number" class="page" value="" required="true"/>
             <label for="finishread">
                 <h3>Have you read it?</h3>
             </label>
@@ -34,7 +33,7 @@
                 <span class="slider round" id="read"></span>
             </label>
             <div>
-                <input type="button" value="Add Book" class="btn addbtn">
+                <input type="submit" value="Add Book" class="btn addbtn">
                 <input type="button" value="Cancel" class="btn cancelbtn">
             </div>
           </form>

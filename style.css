@@ -1,3 +1,21 @@
+body{
+  background-color: rgba(0,255, 255);
+}
+
+.head{
+  color: rgb(94, 255, 0);
+  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+.bookbtn{
+  border: 1px white solid;
+  border-radius: 25%;
+  width: 100px;
+  height: 30px;
+  background-color: rgba(0, 255, 0);
+  color:white;
+}
+
 .header{
     display:flex;
     flex-direction:column;
@@ -8,9 +26,23 @@
 .book{
     width: 250px;
     height: 300px;
-    border: 1px solid black;
+    border: 3px solid greenyellow;
     border-radius: 25%;
     margin: 8px;
+    background-color: rgb(146, 26, 202);
+    color:rgb(171, 248, 47);
+}
+
+.btn{
+  border: none;
+}
+
+.btnremove{
+  background:red;
+  color: white;
+  width: 90px;
+  height: 50px;
+  border-radius: 20%;
 }
 
 .book{
@@ -41,6 +73,7 @@
   position: relative;
   text-align: center;
   width: 100%;
+  background-color:rgba(0, 0, 0, 0.5)
 }
 
 .formPopup {

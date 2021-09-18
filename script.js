@@ -1,7 +1,7 @@
 // DOM assets
 const books_div = document.querySelector('.books')
 
-const open_form = document.querySelector('.openform')
+const open_form = document.querySelector('.bookbtn')
 open_form.addEventListener('click', displayPopUp)
 
 const cancel_btn = document.querySelector('.cancelbtn')
