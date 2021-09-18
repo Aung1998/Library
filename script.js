@@ -75,10 +75,20 @@ function createBook(book){
    book_div.appendChild(createBookDiv(book.author))
    book_div.appendChild(createBookDiv(book.pages))
    if(book.have_read){
-      book_div.appendChild(createBookDiv("Has read"))
+      const read_btn = document.createElement('input')
+      read_btn.type = 'button';
+      read_btn.value = "Have Read"
+      read_btn.classList.add('btn', 'readbtn', 'read')
+      read_btn.addEventListener('click', () => readChange(book))
+      book_div.appendChild(read_btn)
    }
    else{
-      book_div.appendChild(createBookDiv("Has not read"))
+      const read_btn = document.createElement('input')
+      read_btn.type = 'button';
+      read_btn.value = "Have not Read"
+      read_btn.classList.add('btn', 'readbtn', 'unread')
+      read_btn.addEventListener('click', () => readChange(book))
+      book_div.appendChild(read_btn)
    }
    return book_div
 }
@@ -105,10 +115,11 @@ function addRemoveEvent(btn, t, a){
             myLibrary.pop(myLibrary.indexOf(book))
          }
       })
-      console.log(myLibrary)
       updatePage()
    })
 }
 
-
-
+function readChange(book){
+   book.have_read = !book.have_read;
+   updatePage()
+}
